@@ -9,10 +9,6 @@ const smartLincksex = "https://mathspositionuproar.com/g2wukktg49?key=ddb0e6026c
 
 window.addEventListener("DOMContentLoaded", () => {
 
-    document.querySelectorAll('.banneradd').forEach(container => {
-        insertBannerAd(container);
-    });
-
     const NativeBanner = document.getElementById("NativeBanner");
 
     if(NativeBanner){
@@ -29,40 +25,42 @@ window.addEventListener("DOMContentLoaded", () => {
         NativeBanner.appendChild(natScript);
     }
 
+});window.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.banneradd').forEach(container => {
+        const outer = document.createElement('div');
+        outer.style.display = 'flex';
+        outer.style.justifyContent = 'center';
+        outer.style.width = '100%';
+
+        const inner = document.createElement('div');
+        inner.style.borderRadius = '5px';
+        inner.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.25)';
+        inner.style.overflow = 'hidden';
+
+        const scriptOptions = document.createElement('script');
+        scriptOptions.type = 'text/javascript';
+        scriptOptions.innerHTML = `
+            atOptions = {
+                'key' : 'bf82d08b4cfbca89197fb5aa8eab981e',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        `;
+
+        const scriptAd = document.createElement('script');
+        scriptAd.type = 'text/javascript';
+        scriptAd.src = '//www.highperformanceformat.com/bf82d08b4cfbca89197fb5aa8eab981e/invoke.js';
+        scriptAd.async = true;
+
+        inner.appendChild(scriptOptions);
+        inner.appendChild(scriptAd);
+        outer.appendChild(inner);
+        container.appendChild(outer);
+    });
+    console.log("All banneradd elements populated ✅");
 });
-
-
-function insertBannerAd(container){
-
-    const outer = document.createElement("div");
-    outer.style.display = "flex";
-    outer.style.justifyContent = "center";
-    outer.style.width = "100%";
-
-    const inner = document.createElement("div");
-    inner.style.borderRadius = "5px";
-    inner.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.25)";
-    inner.style.overflow = "hidden";
-    inner.style.width = "320px";
-    inner.style.height = "50px";
-
-    window.atOptions = {
-        'key' : 'bf82d08b4cfbca89197fb5aa8eab981e',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320,
-        'params' : {}
-    };
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://www.highperformanceformat.com/bf82d08b4cfbca89197fb5aa8eab981e/invoke.js";
-    script.async = true;
-
-    inner.appendChild(script);
-    outer.appendChild(inner);
-    container.appendChild(outer);
-}
 
 function getWindowSmartLinck(target){
 
@@ -73,7 +71,7 @@ function getWindowSmartLinck(target){
     let randomChise = Math.floor(Math.random() * 2);
     newWindow.href = randomChise === 0 ? smartLinckAll : smartLincksex;
 
-    newWindow.target = "_blank";
+
     newWindow.style.display = "none";
 
     newTarger.click();
