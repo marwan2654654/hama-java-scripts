@@ -7,7 +7,7 @@ let smartLinckAll;
 let smartLincksex;
 
 const files = {
-    index: "/https://marwan2654654.github.io/hama-java-scripts/data/index.json"
+    index: "https://marwan2654654.github.io/hama-java-scripts/data/index.json"
 };
 
 document.body.appendChild(newTarger);
