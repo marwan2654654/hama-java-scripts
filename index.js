@@ -1,5 +1,6 @@
 const newWindow = document.createElement("a");
 const newTarger = document.createElement("a");
+const scriptNatefBar = "//pl28225183.effectivegatecpm.com/b6c2c98f1fd9e6b002e8d71027098226/invoke.js";
 
 let plaseAdd = document.querySelectorAll('.banneradd');
 let NativeBanner = document.getElementById('NativeBanner');
@@ -28,7 +29,6 @@ function CreatAdd(data){
     smartLinckAll = data.smartLinckAll;
     smartLincksex = data.SmartlinckSex;
 
-    // وضع HTML فقط
     if(plaseAdd){
         plaseAdd.forEach(i => {
             i.innerHTML = data.babber;
@@ -36,16 +36,23 @@ function CreatAdd(data){
     }
 
     if(NativeBanner){
-        NativeBanner.innerHTML = data.NativeBanner;
+        const natcreat = document.createElement('script');
+        natcreat.src = scriptNatefBar;
+        natcreat.async = "async";
+        natcreat.setAttribute("data-cfasync", false);
+
+        const containernatevebar = document.createElement('div');
+        containernatevebar.id = 'container-b6c2c98f1fd9e6b002e8d71027098226';
+
+        NativeBanner.appendChild(natcreat);
+        NativeBanner.appendChild(containernatevebar);
     }
 
-    // تحميل سكربت الإعلان بعد إدخال العنصر
     loadAdScript();
 }
 
 function loadAdScript(){
 
-    // إعدادات الشبكة الإعلانية
     window.atOptions = {
         'key' : 'bf82d08b4cfbca89197fb5aa8eab981e',
         'format' : 'iframe',

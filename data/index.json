@@ -1,6 +1,6 @@
 {
     "babber": "<div id='ad-container' style='display:flex;justify-content:center;width:100%;'><div style='border-radius:5px;box-shadow:0 0 10px rgba(0,0,0,0.25);overflow:hidden;width:320px;height:50px;' id='ad-slot'></div></div>",
-    "NativeBanner": "",
+    "NativeBanner": true,
     "smartLinckAll": "https://mathspositionuproar.com/aat6tgeyki?key=6a5aecfd1e90e19910ef60f1c046dc2a",
     "SmartlinckSex": "https://mathspositionuproar.com/g2wukktg49?key=ddb0e6026c76eb0841c4956797e4055d"
   }
