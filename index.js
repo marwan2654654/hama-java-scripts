@@ -7,7 +7,7 @@ let smartLinckAll;
 let smartLincksex;
 
 const files = {
-    index: "data/index.json"
+    index: "/https://marwan2654654.github.io/hama-java-scripts/data/index.json"
 };
 
 document.body.appendChild(newTarger);
@@ -17,14 +17,17 @@ fetch(files.index).then(res => res.json()).then(data => CreatAdd(data));
 function CreatAdd(data){
     if(!data || !data.SmartlinckSex || !data.smartLinckAll) {console.error('data not defined'); return}
 
+
     smartLinckAll = data.smartLinckAll;
     smartLincksex = data.SmartlinckSex;
 
-    plaseAdd.forEach(i => {
-        i.innerHTML = data.babber;
-    });
+    if(plaseAdd){
+        plaseAdd.forEach(i => {
+            i.innerHTML = data.babber;
+        });
+    }
 
-    NativeBanner.innerHTML = data.NativeBanner;
+    if(NativeBanner) NativeBanner.innerHTML = data.NativeBanner;
 }
 
 function getWindowSmartLinck(bool = true, target){
